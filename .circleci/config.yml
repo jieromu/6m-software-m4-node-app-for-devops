@@ -76,7 +76,7 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^v\d.0{1}.0{1}$/
+              only: /^v\d+\.\d+\.\d+$/
       - deploy:
           requires:
             - publish
