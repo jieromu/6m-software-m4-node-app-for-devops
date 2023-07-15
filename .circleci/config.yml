@@ -39,7 +39,7 @@ jobs:
          name: Publish Docker Image to Docker Hub
          command: |
            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-           docker build -t $IMAGE_NAME:<< pipeline.git.tag >>.
+           docker build -t $IMAGE_NAME:<< pipeline.git.tag >> .
            docker push $IMAGE_NAME:<< pipeline.git.tag >>
   deploy:
       docker:
