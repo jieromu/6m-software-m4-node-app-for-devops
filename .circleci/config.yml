@@ -69,8 +69,7 @@ workflows:
               branches:
                 only: main
               tags:
-                only: /^v\d+\.\d+\.\d+$/
-          
+                only: /.*/          
       - publish:
           requires:
             - test
