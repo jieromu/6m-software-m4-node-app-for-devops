@@ -73,7 +73,7 @@ workflows:
           requires:
             - test
           filters:
-            branch:
+            branches:
               ignore: /.*/
             tags:
               only: /^v\d+\.\d+\.\d+$/         
@@ -81,7 +81,7 @@ workflows:
           requires:
             - publish
           filters: 
-            branch:
+            branches:
               ignore: /.*/
             tags:
               only: /^v\d.0{1}.0{1}$/
