@@ -27,16 +27,16 @@ jobs:
           npm run test
   scan:
     docker:
-        - image: cimg/node:16.10
+      - image: cimg/node:16.10
     environment:
-        IMAGE_NAME: jieromu79/cont_integration
+      IMAGE_NAME: jieromu79/cont_integration
     steps:
-        - checkout
-        - setup_remote_docker      
-        - docker/check
-        - run: docker build -t $IMAGE_NAME .
-        - snyk/scan: 
-        docker-image-name: $IMAGE_NAME
+      - checkout
+      - setup_remote_docker   
+      - docker/check
+      - run: docker build -t $IMAGE_NAME .
+      - snyk/scan: 
+          docker-image-name: $IMAGE_NAME
   # publish:
   #   docker:
   #     - image: cimg/node:16.10
